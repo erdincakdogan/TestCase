@@ -4,8 +4,9 @@ import java.time.LocalDate;
 
 public class WorkerCalculate {
     public static void main(String[] args) {
-        Worker worker = new Worker("Mehmet", "5000", LocalDate.of(2010, 5, 15));
-        int workingDay = worker.calculateWorkingDay();
-        System.out.println(worker.getFullName() + " " + workingDay + " .");
+        Worker worker = new Worker("Mehmet", "5000", LocalDate.of(2005, 5, 15));
+        String workingPeriod = worker.getWorkingPeriodString();
+        System.out.println(worker.getFullName() + " has been working for " + workingPeriod);
+
     }
 }

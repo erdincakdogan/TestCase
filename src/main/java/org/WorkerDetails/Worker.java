@@ -5,6 +5,9 @@ import java.time.Period;
 
 public class Worker {
 
+    private String fullName;
+    private String salary;
+    private LocalDate firstDay;
 
     public String getFullName() {
         return fullName;
@@ -30,20 +33,43 @@ public class Worker {
         this.firstDay = firstDay;
     }
 
-    private String fullName;
-    private String salary;
-    private LocalDate firstDay;
     public Worker(String fullName, String salary, LocalDate firstDay) {
         this.fullName = fullName;
         this.salary = salary;
         this.firstDay = firstDay;
     }
-    public int calculateWorkingDay (){
+
+    public Period calculateWorkingPeriod() {
         LocalDate today = LocalDate.now();
-        Period workingDay = Period.between(firstDay, today);
-        return workingDay.getYears();
+        return Period.between(firstDay, today);
     }
 
+    public String getWorkingPeriodString() {
+        Period workingPeriod = calculateWorkingPeriod();
+        int years = workingPeriod.getYears();
+        int months = workingPeriod.getMonths();
+        int days = workingPeriod.getDays();
 
+        StringBuilder periodString = new StringBuilder();
+        if (years > 0) {
+            periodString.append(years).append(" year");
+            if (years > 1) {
+                periodString.append("s");
+            }
+            periodString.append(", ");
+        }
+        if (months > 0) {
+            periodString.append(months).append(" month");
+            if (months > 1) {
+                periodString.append("s");
+            }
+            periodString.append(", ");
+        }
+        periodString.append(days).append(" day");
+        if (days > 1) {
+            periodString.append("s");
+        }
 
+        return periodString.toString();
+    }
 }

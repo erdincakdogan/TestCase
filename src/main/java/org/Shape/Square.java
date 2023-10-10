@@ -1,10 +1,18 @@
 package org.Shape;
 
- class Square  {
-     public Square(double sideLenght) {
-         this.sideLenght = sideLenght;
-     }
+class Square extends AbstractShape {
+    private double side;
 
-     private double sideLenght;
+    public Square(double side) {
+        this.side = side;
+    }
 
-     }
+    @Override
+    double calculateArea() {
+        return side * side;
+    }
+    @Override
+    double calculatePerimeter() {
+        return 4 * side;
+    }
+}

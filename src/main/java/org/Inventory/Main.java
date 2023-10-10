@@ -12,7 +12,7 @@ public class Main {
         inventory.addProduct(product2);
 
         inventory.listProducts();
-        inventory.updateProductCount(product0,20);
+        inventory.updateProductCount(product0,-39);
         inventory.updateProductCount(product1,-20);
         inventory.listProducts();
 

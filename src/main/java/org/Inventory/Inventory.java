@@ -48,12 +48,12 @@ public class Inventory {
                 .forEach(product -> System.out.println("Low stock alarm: "+ product.getName() +" "+ product.getCount()));
     }
     public void listProducts() {
-//if (inventoryUpdated) {
+
             System.out.println("Current Invetory: ");
             productList.forEach(product -> {
                 System.out.println(product.getName() + " - Count: " + product.getCount());
             });
-        //    inventoryUpdated=false;
+            //Bu methodun ıcıde yap
 
     }
 }

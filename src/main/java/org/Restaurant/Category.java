@@ -1,4 +1,5 @@
 package org.Restaurant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,4 +23,5 @@ public class Category {
     public List<MenuItem> getItems() {
         return items;
     }
+
 }
